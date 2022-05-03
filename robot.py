@@ -1,4 +1,5 @@
 class UmetnaInteligenca:
-    pass
+    def __init__(self):
+        self.ime = "GENIJ"
 
 # še ful enih stvari
