@@ -125,3 +125,6 @@ def pozeni_vmesnik():
             break
     if input("Želite igrati ponovno? (DA / NE) ").upper() == "DA":
         pozeni_vmesnik()
+
+
+# test
