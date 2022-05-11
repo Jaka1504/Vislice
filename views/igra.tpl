@@ -24,11 +24,16 @@
     Ugibana črka: <input name="crka" type="text" autofocus>
     <button type="submit">Ugibaj</button>
   </form>
-  %end
-
   <form action="/igra/" method="post">
     <button type="submit">Nova igra</button>
   </form>
+  %else:
+  <form action="/igra/" method="post">
+    <button type="submit" autofocus>Nova igra</button>
+  </form>
+  %end
+
+  
 </body>
 
 </html>
