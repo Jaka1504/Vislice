@@ -21,7 +21,7 @@
 
   %if not igra.zmaga() and not igra.poraz():
   <form action="/igra/{{id_igre}}" method="post">
-    Ugibana črka: <input name="crka" type="text">
+    Ugibana črka: <input name="crka" type="text" autofocus>
     <button type="submit">Ugibaj</button>
   </form>
   %end
