@@ -24,7 +24,7 @@ class Vislice:
         
     
     def ugibaj(self, id_igre, crka):
-        igra = self.igre[id_igre]
+        igra = self.igre[id_igre][0]
         izid = igra.ugibaj(crka)
         self.igre.update({id_igre: (igra, izid)})
 
