@@ -4,6 +4,29 @@ import random
 STEVILO_DOVOLJENIH_NAPAK = 10
 PRAVILNA_CRKA, PONOVLJENA_CRKA, NAPACNA_CRKA = "+", "o", "-"
 ZMAGA, PORAZ = "W", "X"
+ZACETEK = "Z"
+
+
+class Vislice:
+    def __init__(self):
+        self.igre = {}
+
+    
+    def prost_id_igre(self):
+        return len(self.igre)
+
+    
+    def nova_igra(self):
+        novo = nova_igra()
+        id = self.prost_id_igre()
+        self.igre.update({id: (novo, ZACETEK)})
+        return id
+        
+    
+    def ugibaj(self, id_igre, crka):
+        igra = self.igre[id_igre]
+        izid = igra.ugibaj(crka)
+        self.igre.update({id_igre: (igra, izid)})
 
 
 class Igra:
