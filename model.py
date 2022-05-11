@@ -48,7 +48,7 @@ class Igra:
 
     
     def stevilo_napak(self):
-        return len(self.napacne_crke())
+        return min(len(self.napacne_crke()), STEVILO_DOVOLJENIH_NAPAK)
 
     
     def zmaga(self):

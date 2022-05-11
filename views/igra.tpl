@@ -3,13 +3,23 @@
 
 <body>
 
-  <h1>Vislice</h1>
+  <h1>Stanje igre:</h1>
 
-  Trenutno uganjeni del gesla: {{igra.pravilni_del_gesla()}}
+  <img src="img/10.jpg" alt="obesanje">
 
-  <form action="/igra/" method="post">
-    <button type="submit">Nova igra</button>
-  </form>
+  <p>
+    Trenutno uganjeni del gesla: {{igra.pravilni_del_gesla()}}
+  </p>
+
+  <p>
+    Nepravilne črke: {{igra.nepravilni_ugibi()}}
+  </p>
+
+  <p>
+    Stopnja obešenosti:
+  </p>
+  <img src="img/{{igra.stevilo_napak()}}.jpg" alt="stanje {{igra.stevilo_napak()}}">
+
 </body>
 
 </html>
