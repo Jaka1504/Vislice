@@ -34,9 +34,12 @@ class Vislice:
 
 
 class Igra:
-    def __init__(self, geslo, crke=[]) -> None:
+    def __init__(self, geslo, crke=None) -> None:
         self.geslo = geslo.upper()
-        self.crke = crke[:]
+        if crke is None:
+            self.crke = []
+        else:
+            self.crke = crke[:]
 
     
     def napacne_crke(self):
@@ -56,7 +59,7 @@ class Igra:
 
 
     def poraz(self):
-        return self.stevilo_napak() > STEVILO_DOVOLJENIH_NAPAK
+        return self.stevilo_napak() >= STEVILO_DOVOLJENIH_NAPAK
 
     
     def pravilni_del_gesla(self):

@@ -23,7 +23,17 @@ def nova_igra():
 
 @bottle.get("/igra/<id_igre:int>")
 def pokazi_igro(id_igre):
-    return bottle.template("igra", igra=vislice.igre[id_igre][0])
+    return bottle.template("igra", igra=vislice.igre[id_igre][0], id_igre=id_igre)
+
+
+@bottle.post("/igra/<id_igre:int>")
+def ugibaj(id_igre):
+    crka = bottle.request.forms.getunicode("crka").upper()
+    vislice.ugibaj(id_igre, crka)
+    return pokazi_igro(id_igre)
+
+
+
 
 # to naj bo na dnu
 bottle.run(reloader=True, debug=True)
