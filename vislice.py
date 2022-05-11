@@ -1,4 +1,5 @@
-import model, bottle
+import bottle
+import model
 
 
 vislice = model.Vislice()
@@ -6,7 +7,7 @@ vislice = model.Vislice()
 
 @bottle.get("/")
 def osnovna_stran():
-    return "index.tpl"
+    return bottle.template("index")
 
 
 bottle.run(reloader=True, debug=True)
