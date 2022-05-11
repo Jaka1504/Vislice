@@ -33,7 +33,5 @@ def ugibaj(id_igre):
     return pokazi_igro(id_igre)
 
 
-
-
 # to naj bo na dnu
 bottle.run(reloader=True, debug=True)
