@@ -6,4 +6,4 @@ vislice = model.Vislice()
 
 @bottle.get("/")
 def osnovna_stran():
-    return index.tpl
+    return "index.tpl"
