@@ -17,7 +17,7 @@ def osnovna_stran():
 
 @bottle.post("/igra/")
 def nova_igra():
-    novi_id = vislice.nova_igra
+    novi_id = vislice.nova_igra()
     bottle.redirect(f"/igra/{novi_id}")
 
 

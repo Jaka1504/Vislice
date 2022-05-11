@@ -60,14 +60,14 @@ class Igra:
 
     
     def pravilni_del_gesla(self):
-        niz = ''
-        for crka in self.geslo:
-            if crka in self.crke:
-                niz += crka
-            else:
-                niz += "_"
-        return niz    
-        # return "".join([(crka if crka in self.crke else "_") for crka in self.geslo])
+        # niz = ''
+        # for crka in self.geslo:
+        #     if crka in self.crke:
+        #         niz += crka
+        #     else:
+        #         niz += "_"
+        # return niz    
+        return " ".join([(crka if crka in self.crke else "_") for crka in self.geslo])
     
 
     def nepravilni_ugibi(self):
