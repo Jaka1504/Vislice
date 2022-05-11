@@ -1,4 +1,5 @@
 import random
+import uuid
 
 
 STEVILO_DOVOLJENIH_NAPAK = 10
@@ -13,7 +14,10 @@ class Vislice:
 
     
     def prost_id_igre(self):
-        return len(self.igre)
+        while True:
+            kandidat = uuid.uuid4().int
+            if not kandidat in self.igre:
+                return kandidat
 
     
     def nova_igra(self):
