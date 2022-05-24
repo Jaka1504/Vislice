@@ -4,6 +4,7 @@ import model
 SKRIVNOST = "A ma kdo kakšno kreativno idejo?"
 
 vislice = model.Vislice()
+vislice.nalozi_iz_datoteke()
 
 
 @bottle.get("/img/<file>")
@@ -27,12 +28,14 @@ def ugibaj():
     id_igre = bottle.request.get_cookie("id_igre", secret=SKRIVNOST)
     crka = bottle.request.forms.getunicode("crka").upper()
     vislice.ugibaj(id_igre, crka)
+    vislice.zapisi_igre_v_datoteko()
     return pokazi_igro()
 
 
 @bottle.post("/nova_igra/")
-def nova_igra_cookie():
+def nova_igra():
     id_igre = vislice.nova_igra()
+    vislice.zapisi_igre_v_datoteko()
     bottle.response.set_cookie("id_igre", id_igre, secret=SKRIVNOST, path="/")
     bottle.redirect("/igra/")
 
